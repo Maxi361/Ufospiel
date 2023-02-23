@@ -9,10 +9,10 @@ public class Ufospiel{
     private Asteroid asteroid1,asteroid2,asteroid3;
     //[...]
 
-    public Ufospiel(){
-        kamera = new GLSchwenkkamera(800,600);  
-        kamera.verschiebe(0,200,500);
-        licht  = new GLLicht();
+    public Ufospiel() {
+        kamera = new GLSchwenkkamera();
+        kamera.verschiebe(0, 200, 500);
+        licht = new GLLicht();
         tastatur = new GLTastatur();
         himmel = new GLHimmel("src/img/Sterne.jpg");
 
@@ -20,17 +20,34 @@ public class Ufospiel{
 
         asteroid1 = new Asteroid();
         //[...]
-        
-        fuehreAus();
-    }
 
-    public void fuehreAus(){
-        while(!tastatur.esc()){           
-            asteroid1.bewegeDich();
-            //[...]
 
-            Sys.warte();
+        this.weiter();
+
+
+
         }
-        Sys.beenden(); 
-    }
+
+
+        public void weiter(){
+            while (0==0) {
+                asteroid1.bewegedich();
+                Sys.warte(5);
+                if (tastatur.istGedrueckt('a') && (dasUfo.ufoX() > -500)) {
+                    dasUfo.bewegeLinks();
+                }
+                if (tastatur.istGedrueckt('d') && (dasUfo.ufoX() < 500)) {
+                    dasUfo.bewegeRechts();
+                }
+            }
+
+
+
+
+        }
+
+
+
+
+
 }
