@@ -31,13 +31,16 @@ public class Ufospiel{
 
         public void weiter(){
             while (0==0) {
-                asteroid1.bewegedich();
+                asteroid1.Bewegen();
                 Sys.warte(5);
                 if (tastatur.istGedrueckt('a') && (dasUfo.ufoX() > -500)) {
                     dasUfo.bewegeLinks();
                 }
                 if (tastatur.istGedrueckt('d') && (dasUfo.ufoX() < 500)) {
                     dasUfo.bewegeRechts();
+
+                asteroid1.beruehrung();
+
                 }
             }
 

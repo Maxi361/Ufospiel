@@ -10,6 +10,7 @@ GLPrismoid ufo;
     //UFo nach links
     public void bewegeLinks(){
         ufo.verschiebe(-2,0,0);
+
     }
 
     //Ufo nach rechts
